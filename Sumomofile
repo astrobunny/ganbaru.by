@@ -1,0 +1,20 @@
+
+key = hidden_value ENV["CLOUDFLARE_KEY"]
+email = hidden_value ENV["CLOUDFLARE_EMAIL"]
+price = hidden_value "0.02"
+
+make "Custom::CloudflareCNAME" do
+	Key key
+	Email email
+	Domain "ganbaru.by"
+	Entry "@"
+	Cname "ganbaru.by.s3-website-ap-northeast-1.amazonaws.com"
+end
+
+make "Custom::CloudflareCNAME" do
+	Key key
+	Email email
+	Domain "ganbaru.by"
+	Entry "www"
+	Cname "ganbaru.by.s3-website-ap-northeast-1.amazonaws.com"
+end

@@ -1,0 +1,22 @@
+center_page "Happy Birthday Ruby!" do
+
+	request_css "css/ruby.css"
+	div style: "margin: 0 auto;" do
+
+		h1 "Happy Birthday Ruby!"
+		image "rubypic.jpg"
+
+
+	end
+
+end
+
+center_page "cards", "Ruby Cards" do
+
+	request_css "css/ruby.css"
+
+	h1 "Ruby cards"
+	images = Dir["images/sif/*.*"].map {|filename| "#{filename}"}.select{|f| !f.include? "-t"}
+	thumbnails = images.map {|filename| "/images/sif/#{File.basename(filename, File.extname(filename))}-t.jpg"}
+	gallery images, thumbnails
+end

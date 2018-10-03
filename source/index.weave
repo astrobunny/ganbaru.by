@@ -1,22 +1,27 @@
-center_page "Happy Birthday Ruby!" do
+raw_page "" do
 
-	request_css "css/ruby.css"
-	div style: "margin: 0 auto;" do
+	html do
+		head do
+			title "Ganbaruby!"
 
-		h1 "Happy Birthday Ruby!"
-		image "rubypic.jpg"
+			link rel: :stylesheet, type: "text/css", href: "css/ruby.css"
+			script "", src: "js/gg/constants.js"
+			script "", src: "js/gg/gamepad.js"
+			script "", src: "js/gg/Update.js"
+			script "", src: "js/gg/MapCamera.js"
+			script "", src: "js/gg/MapView.js"
+			script "", src: "js/gg/CanvasMapView.js"
+			script "", src: "js/gg/MapModel.js"
+			script "", src: "js/gg/KeyWatcher.js"
+			script "", src: "js/gg/DialogView.js"
+			script "", src: "js/gg/World.js"
+			script "", src: "js/gg/game/SimpleInput.js"
+			script "", src: "js/gg/game/GameState.js"
+			script "", src: "js/game.js"
+		end
 
-
+		body do
+			div id: "game"
+		end
 	end
-
-end
-
-center_page "cards", "Ruby Cards" do
-
-	request_css "css/ruby.css"
-
-	h1 "Ruby cards"
-	images = Dir["images/sif/*.*"].map {|filename| "#{filename}"}.select{|f| !f.include? "-t"}
-	thumbnails = images.map {|filename| "/images/sif/#{File.basename(filename, File.extname(filename))}-t.jpg"}
-	gallery images, thumbnails
 end

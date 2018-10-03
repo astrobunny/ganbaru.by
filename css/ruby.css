@@ -1,7 +1,16 @@
-.middle-box {
-	max-width:100%;
+
+body {
+  height: 90%;
+  background: #FFF9FC;
 }
 
-.middle-box h1 {
-    font-size: 5em;
+#game {
+  width: 640px;
+  height: 960px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
